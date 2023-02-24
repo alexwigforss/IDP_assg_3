@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace IDP_assg_3
 {
@@ -17,6 +18,13 @@ namespace IDP_assg_3
             this.smältpunkt = smältpunkt;
             this.kokpunkt = kokpunkt;
         }
+        public void Print()
+        {
+            Write($"Grundämne: {namn}\n  ");
+            Write($"typ: {typ}\n  ");
+            Write($"smältpunkt: {smältpunkt} K\n  ");
+            Write($"kokpunkt: {kokpunkt} K\n\n");
+        }
     }
     internal class Program
     {
@@ -25,7 +33,11 @@ namespace IDP_assg_3
             Grundämne syre = new Grundämne("syre", 8, "ickemetall", 54.36, 90.188);
             Grundämne järn = new Grundämne("järn", 26, "metall", 1811, 3134);
             Grundämne guld = new Grundämne("guld", 79, "metall", 1337.33, 3243);
-            Console.WriteLine(syre.namn + " " + syre.smältpunkt);
+
+            syre.Print();
+            järn.Print();
+            guld.Print();
         }
+
     }
 }
