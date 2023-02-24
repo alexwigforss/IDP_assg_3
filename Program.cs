@@ -4,7 +4,7 @@ using static System.Console;
 
 namespace IDP_assg_3
 {
-    public class Grundämne
+    public class Grundämne // Upg 1
     {
         public string namn;
         public int atomnummer;
@@ -19,7 +19,7 @@ namespace IDP_assg_3
             this.smältpunkt = smältpunkt;
             this.kokpunkt = kokpunkt;
         }
-        public void Print()
+        public void Print() // Upg 3
         {
             Write($"Grundämne: {namn}\n  ");
             Write($"typ: {typ}\n  ");
@@ -31,31 +31,32 @@ namespace IDP_assg_3
     {
         static void Main(string[] args)
         {
+            // Upg 2
             Grundämne syre = new Grundämne("syre", 8, "ickemetall", 54.36, 90.188);
             Grundämne järn = new Grundämne("järn", 26, "metall", 1811, 3134);
             Grundämne guld = new Grundämne("guld", 79, "metall", 1337.33, 3243);
 
-            /*syre.Print(); järn.Print(); guld.Print();*/
-
-            Grundämne[] grundämnen = new Grundämne[]
+            Grundämne[] grundämnen = new Grundämne[] // upg 4
             {
                 syre,järn,guld,
                 new Grundämne("väte", 1, "ickemetall", 13.99, 20.271),
                 new Grundämne("brom", 35, "ickemetall", 265.8, 332.0),
                 new Grundämne("kvicksilver", 80, "metall", 234.3210, 629.88)
             };
-            foreach (Grundämne grund in grundämnen)
+
+            foreach (Grundämne grund in grundämnen) // Upg 5
             {
                 grund.Print();
             }
-            foreach (Grundämne grund in grundämnen)
+
+            foreach (Grundämne grund in grundämnen) // Upg 6
             {
                 if (grund.typ == "metall") Write($"{grund.namn} ");
             }
             WriteLine($"\när alla metaller.\n");
 
             double tröskel = 273.16;
-            foreach (Grundämne grund in grundämnen)
+            foreach (Grundämne grund in grundämnen) // Upg 7
             {
                 if (grund.smältpunkt < tröskel && grund.kokpunkt > tröskel) Write($"{grund.namn} ");
             }
