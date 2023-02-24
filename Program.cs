@@ -34,9 +34,7 @@ namespace IDP_assg_3
             Grundämne järn = new Grundämne("järn", 26, "metall", 1811, 3134);
             Grundämne guld = new Grundämne("guld", 79, "metall", 1337.33, 3243);
 
-            syre.Print();
-            järn.Print();
-            guld.Print();
+            /*syre.Print(); järn.Print(); guld.Print();*/
 
             Grundämne[] grundämnen = new Grundämne[]
             {
@@ -45,6 +43,10 @@ namespace IDP_assg_3
                 new Grundämne("", 35, "ickemetall", 265.8, 332.0),
                 new Grundämne("", 80, "metall", 234.3210, 629.88)
             };
+            foreach (Grundämne grund in grundämnen)
+            {
+                grund.Print();
+            }
         }
     }
 }
