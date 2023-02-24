@@ -60,7 +60,10 @@ namespace IDP_assg_3
             {
                 if (grund.smältpunkt < tröskel && grund.kokpunkt > tröskel) Write($"{grund.namn} ");
             }
-            WriteLine($"\nHar en smältpunkt lägre än & en kokpunkt högre än {tröskel} K.\n");
+            WriteLine($"\nhar en smältpunkt lägre än & en kokpunkt högre än {tröskel} K.\n");
+
+            Write($"\nTryck på valfri tangent för att avsluta: ");
+            ReadKey();
         }
     }
 }
