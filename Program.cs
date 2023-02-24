@@ -52,7 +52,14 @@ namespace IDP_assg_3
             {
                 if (grund.typ == "metall") Write($"{grund.namn} ");
             }
-            WriteLine($"\när alla metaller.");
+            WriteLine($"\när alla metaller.\n");
+
+            double tröskel = 273.16;
+            foreach (Grundämne grund in grundämnen)
+            {
+                if (grund.smältpunkt < tröskel && grund.kokpunkt > tröskel) Write($"{grund.namn} ");
+            }
+            WriteLine($"\nHar en smältpunkt lägre än & en kokpunkt högre än {tröskel} K.\n");
         }
     }
 }
