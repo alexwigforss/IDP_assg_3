@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using static System.Console;
 
 namespace IDP_assg_3
@@ -40,13 +41,18 @@ namespace IDP_assg_3
             {
                 syre,järn,guld,
                 new Grundämne("väte", 1, "ickemetall", 13.99, 20.271),
-                new Grundämne("", 35, "ickemetall", 265.8, 332.0),
-                new Grundämne("", 80, "metall", 234.3210, 629.88)
+                new Grundämne("brom", 35, "ickemetall", 265.8, 332.0),
+                new Grundämne("kvicksilver", 80, "metall", 234.3210, 629.88)
             };
             foreach (Grundämne grund in grundämnen)
             {
                 grund.Print();
             }
+            foreach (Grundämne grund in grundämnen)
+            {
+                if (grund.typ == "metall") Write($"{grund.namn} ");
+            }
+            WriteLine($"\när alla metaller.");
         }
     }
 }
